@@ -1,0 +1,402 @@
+/* Dark Vine Theme */
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #1a0d0d; /* deep vine background */
+  color: #f5f5f5;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #330f1a; /* dark maroon */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.sidebar .brand {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ff4d6d; /* accent pink-red */
+}
+
+.sidebar .new-chat {
+  background: #ff4d6d;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background 0.3s ease;
+}
+
+.sidebar .new-chat:hover {
+  background: #e63950;
+}
+
+.history {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.history-item {
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease;
+}
+
+.history-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Main */
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 20px;
+  border-bottom: 1px solid #4d1f2f;
+  background: #260f17;
+}
+
+.header h2 {
+  margin: 0;
+  color: #ff4d6d;
+}
+
+/* Chat Area */
+.chat-area {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #1a0d0d;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.profile.ai {
+  background: #ff4d6d;
+  color: #fff;
+}
+
+.profile.user {
+  background: #9b1c31;
+  color: #fff;
+}
+
+.text {
+  background: #260f17;
+  padding: 10px 15px;
+  border-radius: 8px;
+  max-width: 70%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  color: #f5f5f5;
+}
+
+/* Input */
+.input-section {
+  padding: 15px;
+  border-top: 1px solid #4d1f2f;
+  background: #260f17;
+}
+
+.input-box {
+  display: flex;
+  gap: 10px;
+}
+
+textarea {
+  flex-grow: 1;
+  resize: none;
+  padding: 10px;
+  border: 1px solid #4d1f2f;
+  border-radius: 6px;
+  font-family: inherit;
+  background: #1a0d0d;
+  color: #f5f5f5;
+}
+
+button#sendBtn {
+  background: #ff4d6d;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button#sendBtn:hover {
+  background: #e63950;
+}
+
+/* Message animations */
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.4s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* AI glowing effect */
+.message.assistant .text {
+  border-left: 3px solid #ff4d6d;
+  animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 5px #ff4d6d; }
+  50% { box-shadow: 0 0 15px #ff4d6d; }
+  100% { box-shadow: 0 0 5px #ff4d6d; }
+}
+
+.logo-img {
+  max-width: 180px;   /* adjust size */
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto; /* center with spacing */
+}
+
+.upload-btn {
+  background: #9b1c31; /* deep maroon accent */
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.upload-btn:hover {
+  background: #ff4d6d;
+  transform: scale(1.1);
+}
+
+
+/* Preserve formatting in AI responses */
+.chat-area .message .text {
+  white-space: pre-line;   /* Keeps line breaks */
+  font-family: "Courier New", monospace; /* Optional: cleaner look for code blocks */
+}
+
+.chat-area .message .text code {
+  background-color: #f4f4f4;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+}
+
+
+/* Add spacing between chat messages */
+.message {
+  margin-bottom: 18px;   /* space between messages */
+  line-height: 1.6;      /* increases vertical spacing between lines */
+}
+
+/* Extra spacing inside the text bubbles */
+.message .text {
+  padding: 10px 14px;
+  line-height: 1.6;      /* more breathing space between lines of text */
+}
+
+/* Sidebar history spacing */
+.history-item {
+  padding: 8px 12px;
+  margin-bottom: 10px;   /* space between history items */
+  line-height: 1.5;
+}
+
+/* Input box spacing */
+.input-box textarea {
+  line-height: 1.6;      /* more space between lines in textarea */
+  padding: 8px;
+}
+
+
+/* ========================= */
+/* Chat Images Styling       */
+/* ========================= */
+.chat-image {
+  max-width: 100%;          /* responsive */
+  height: auto;
+  margin-top: 10px;
+  border-radius: 8px;       /* rounded corners */
+  border: 1px solid #4d1f2f; /* subtle border to match theme */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* soft shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chat-image:hover {
+  transform: scale(1.03);   /* slight zoom on hover */
+  box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+}
+
+/* Ensure diagrams and images align nicely with text bubbles */
+.message .text img {
+  display: block;
+  margin: 8px auto;         /* center inside bubble */
+}
+
+
+/* Glassmorphism effect for chat bubbles */
+.message .text {
+  background: rgba(38, 15, 23, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient button */
+button#sendBtn {
+  background: linear-gradient(135deg, #ff4d6d, #9b1c31);
+  transition: transform 0.2s ease;
+}
+button#sendBtn:hover {
+  transform: scale(1.05);
+}
+
+/* Typing indicator */
+.typing-indicator {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 2px;
+  background: #ff4d6d;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+@keyframes bounce {
+  to { transform: translateY(-4px); opacity: 0.7; }
+}
+
+
+/* ========================= */
+/* Download Chat Button      */
+/* ========================= */
+#downloadChatBtn {
+  background: linear-gradient(135deg, #9b1c31, #ff4d6d); /* vine + accent gradient */
+  color: #fff;
+  font-weight: bold;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: auto; /* aligns to the right in header */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+#downloadChatBtn:hover {
+  background: linear-gradient(135deg, #ff4d6d, #e63950); /* brighter hover */
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(255,77,109,0.6);
+}
+
+/* Place inside header nicely */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* ensures button sits right */
+  padding: 20px;
+  border-bottom: 1px solid #4d1f2f;
+  background: #260f17;
+}
+
+.header h2 {
+  margin: 0;
+  color: #ff4d6d;
+}
+
+
+/* ========================= */
+/* Answer Generation Styling */
+/* ========================= */
+.message.answer-generation .text {
+  font-family: "Inter", "Segoe UI", sans-serif; /* same font style as Copilot */
+  font-size: 1.1rem;                           /* slightly larger for clarity */
+  line-height: 1.8;                            /* generous breathing space */
+  letter-spacing: 0.25px;                      /* subtle spacing for smoothness */
+  color: #fff;
+  background: rgba(38, 15, 23, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 4px solid #ff4d6d;
+  box-shadow: 0 0 12px rgba(255, 77, 109, 0.4);
+  padding: 16px 20px;
+  margin-top: 12px;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.message.answer-generation .text:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 18px rgba(255, 77, 109, 0.6);
+}
+
+/* Smooth fade-in animation */
+.message.answer-generation {
+  animation: fadeInAnswer 0.6s ease forwards;
+}
+
+@keyframes fadeInAnswer {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+ .assistant .text {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #FFD6E0;
+  background: #3B0A2A;
+  padding: 12px;
+  border-radius: 8px;
+} 
+
+

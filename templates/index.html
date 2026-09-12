@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAGenius - AI Document Intelligence</title>
+  <link rel="stylesheet" href="../static/style1.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="/static/Assets/Logo.png" alt="RAGenius Logo" />
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Features</a></li>
+      <li><a href="#">How it Works</a></li>
+      <li><a href="#">Use Cases</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="https://aws.amazon.com/what-is/retrieval-augmented-generation/">Docs</a></li>
+    </ul>
+    <div class="nav-buttons">
+      <form action="{{ url_for('login') }}" method="get">
+      <button class="login-btn" type="submit">Login</button>
+      </form>
+      <form action="{{ url_for('login') }}" method="get">
+      <button class="get-started-btn" type="submit">Get Started</button>
+      </form>
+      
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+  <div class="hero-text">
+    <span class="badge">AI-Powered Document Intelligence</span>
+    <h1>Unlock Knowledge.<br>Ask Anything.<br><span>Get Answers.</span></h1>
+    <p>RAGenius combines the power of Retrieval-Augmented Generation to turn your documents into intelligent, conversational insights.</p>
+
+    <div class="hero-buttons">
+      <form action="{{ url_for('chat_page') }}" method="get">
+  <button type="submit" class="btn primary">Chat with RAGenius</button>
+</form>
+<form action="{{ url_for('knowledge_base') }}" method="get">
+      <button class="btn secondary">Knowledge Base</button>
+      </form>
+    </div>
+
+    <div class="hero-tags">
+      <span>Secure & Private</span>
+      <span>Lightning Fast</span>
+      <span>Accurate Answers</span>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="/static/Assets/hero.png" alt="RAGenius Dashboard UI" />
+  </div>
+</section>
+
+
+
+  <!-- Features -->
+<section class="features">
+  <div class="section-label">FEATURES</div>
+  <h2>Everything you need for intelligent document search</h2>
+
+  <div class="feature-grid">
+    <div class="feature-card purple">
+      <div class="icon"><img src="/static/Assets/icon1.png" alt="Retrieval-Augmented Generation"></div>
+      <h3>Retrieval-Augmented Generation</h3>
+      <p>Combines the best of retrieval and generation to provide accurate, context-aware answers from your documents.</p>
+    </div>
+
+    <div class="feature-card blue">
+      <div class="icon"><img src="/static/Assets/icon2.png" alt="Multi-Source Ingestion"></div>
+      <h3>Multi-Source Ingestion</h3>
+      <p>Ingest PDFs, DOCX, PPTX, CSV, TXT, and more. RAGenius understands it all.</p>
+    </div>
+
+    <div class="feature-card green">
+      <div class="icon"><img src="/static/Assets/icon3.png" alt="Smart Chunking"></div>
+      <h3>Smart Chunking</h3>
+      <p>Advanced chunking and embedding strategies for better context and higher accuracy.</p>
+    </div>
+
+    <div class="feature-card yellow">
+      <div class="icon"><img src="/static/Assets/icon4.png" alt="Conversational AI"></div>
+      <h3>Conversational AI</h3>
+      <p>Chat naturally with your documents. Ask follow-ups and get precise answers every time.</p>
+    </div>
+
+    <div class="feature-card red">
+      <div class="icon"><img src="/static/Assets/icon5.png" alt="Source Citations"></div>
+      <h3>Source Citations</h3>
+      <p>Every answer comes with references so you can verify and trust the information.</p>
+    </div>
+
+    <div class="feature-card violet">
+      <div class="icon"><img src="/static/Assets/icon6.png" alt="Enterprise Ready"></div>
+      <h3>Enterprise Ready</h3>
+      <p>Secure, scalable, and private. Deployed on your infrastructure or in the cloud.</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- How It Works -->
+<section class="how-it-works">
+  <div class="section-label">HOW IT WORKS</div>
+  <h2>From documents to insights<br>in 4 simple steps</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="icon purple">
+        <img src="/static/Assets/cloudupload.png" alt="Ingest Icon">
+      </div>
+      <h3>1. Ingest</h3>
+      <p>Upload your documents from multiple sources.</p>
+    </div>
+
+    <div class="arrow">
+      <img src="/static/Assets/arrow-right.png" alt="Arrow">
+    </div>
+
+    <div class="step">
+      <div class="icon blue">
+        <img src="/static/Assets/database.png" alt="Index Icon">
+      </div>
+      <h3>2. Index</h3>
+      <p>We process, chunk, and embed your documents.</p>
+    </div>
+
+    <div class="arrow">
+      <img src="/static/Assets/arrow-right.png" alt="Arrow">
+    </div>
+
+    <div class="step">
+      <div class="icon green">
+        <img src="/static/Assets/chat.png" alt="Ask Icon">
+      </div>
+      <h3>3. Ask</h3>
+      <p>Ask questions in natural language.</p>
+    </div>
+
+    <div class="arrow">
+      <img src="/static/Assets/arrow-right.png" alt="Arrow">
+    </div>
+
+    <div class="step">
+      <div class="icon orange">
+        <img src="/static/Assets/star.png" alt="Get Answers Icon">
+      </div>
+      <h3>4. Get Answers</h3>
+      <p>Receive accurate answers with source citations.</p>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+   <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo-section">
+        <img src="/static/Assets/Logo.png" alt="RAGenius Logo" class="logo" />
+        <p class="footer-description">
+          AI-powered document intelligence platform built with RAG to help teams find answers, faster.
+        </p>
+        <div class="social-icons">
+          <a href="#"><img src="/static/Assets/linkedin.png" alt="LinkedIn" /></a>
+          <a href="#"><img src="/static/Assets/github.png" alt="GitHub" /></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">How it Works</a></li>
+            <li><a href="#">Use Cases</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Docs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">API Reference</a></li>
+            <li><a href="#">Changelog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Data Processing</a></li>
+            <li><a href="#">GDPR</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2024 RAGenius. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

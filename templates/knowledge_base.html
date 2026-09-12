@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Knowledge Base - RAGenius</title>
+  <link rel="stylesheet" href="../static/style2.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="/static/Assets/Logo.png" alt="RAGenius Logo" />
+    </div>
+    <ul class="nav-links">
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('knowledge_base') }}" class="active">Knowledge Base</a></li>
+    </ul>
+  </nav>
+
+  <!-- Knowledge Base Section -->
+  <section class="knowledge-base">
+    <h1>Knowledge Base</h1>
+    <p>Details of uploaded PDFs and system configuration.</p>
+
+    <h2>📂 Uploaded PDFs</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>File Name</th>
+          <th>Size (KB)</th>
+          <th>Last Modified</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if pdfs %}
+          {% for pdf in pdfs %}
+            <tr>
+              <td>{{ pdf.name }}</td>
+              <td>{{ pdf.size_kb }}</td>
+              <td>{{ pdf.uploaded }}</td>
+            </tr>
+          {% endfor %}
+        {% else %}
+          <tr><td colspan="3">No PDFs uploaded yet.</td></tr>
+        {% endif %}
+      </tbody>
+    </table>
+
+    <h2>⚙️ Model & System Details</h2>
+    <ul>
+      {% for key, value in model_info.items() %}
+        <li><strong>{{ key }}:</strong> {{ value }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <footer class="footer">
+    <p>© 2024 RAGenius. All rights reserved.</p>
+  </footer>
+</body>
+</html>

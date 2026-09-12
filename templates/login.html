@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DocIntell Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f3f4f6; /* light background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Wrapper rectangle */
+    .login-wrapper {
+      display: flex;
+      width: 900px;   /* fixed width rectangle */
+      height: 600px;  /* fixed height rectangle */
+      background-color: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+
+    /* Left side image */
+    .left-section {
+      flex: 1;
+      background: url('/static/Assets/login.png') no-repeat center center;
+      background-size: cover;
+    }
+
+    /* Right side login form */
+    .right-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+    }
+
+    .login-box {
+      width: 80%;
+      max-width: 320px;
+      text-align: center;
+    }
+
+    .login-box img {
+      width: 50px;
+      margin-bottom: 20px;
+    }
+
+    .login-box h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .login-box p {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 30px;
+    }
+
+    .login-box p a {
+      color: #6366f1;
+      text-decoration: none;
+    }
+
+    .input-group {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 14px;
+      color: #374151;
+      margin-bottom: 6px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #111827;
+    }
+
+    .forgot {
+      text-align: right;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .forgot a {
+      color: #6366f1;
+      text-decoration: none;
+    }
+
+    .btn-signin {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #6366f1, #22d3ee);
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: opacity 0.3s ease;
+    }
+
+    .btn-signin:hover {
+      opacity: 0.9;
+    }
+
+    .divider {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 20px;
+    }
+
+    .btn-google {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      background-color: #ffffff;
+      color: #111827;
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-google:hover {
+      background-color: #f3f4f6;
+    }
+
+    .bottom-text {
+      font-size: 13px;
+      color: #6b7280;
+      margin-top: 20px;
+    }
+
+    .bottom-text a {
+      color: #6366f1;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-wrapper">
+    <!-- Left Section (Image fills half) -->
+    <div class="left-section"></div>
+
+    <!-- Right Section (Login Form) -->
+    <div class="right-section">
+      <div class="login-box">
+        <img src="/static/Assets/Logo.png" alt="DocIntell Icon">
+        <h2>Welcome Back</h2><br />
+
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" placeholder="Enter your email">
+        </div>
+
+        <div class="input-group">
+          <label>Password</label>
+          <input type="password" placeholder="Enter your password">
+        </div>
+
+        <div class="forgot">
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <button class="btn-signin">Sign In</button>
+
+        <div class="divider">or</div>
+
+        <button class="btn-google">
+          <img src="/static/Assets/google.jpg" alt="Google Icon" width="18">
+          Sign in with Google
+        </button>
+
+        <div class="bottom-text">
+          Don’t have an account? <a href="#">Contact your administrator</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+/* =========================
+   Global Styles
+========================= */
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #0f0f1a; /* deep intellectual background */
+  color: #eaeaea;
+  line-height: 1.6;
+}
+
+/* =========================
+   Navbar
+========================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #1a1a2e, #16213e);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+.navbar .logo img {
+  height: 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #eaeaea;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #00d4ff; /* glowing intellect accent */
+}
+
+/* =========================
+   Knowledge Base Section
+========================= */
+.knowledge-base {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(26, 26, 46, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.2);
+}
+
+.knowledge-base h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #00d4ff;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+}
+
+.knowledge-base h2 {
+  margin-top: 2rem;
+  color: #ffd369;
+  font-size: 1.5rem;
+  border-left: 4px solid #ffd369;
+  padding-left: 0.5rem;
+}
+
+.knowledge-base p {
+  color: #b0b0b0;
+}
+
+/* =========================
+   Table Styling
+========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: #1a1a2e;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead {
+  background: #16213e;
+}
+
+thead th {
+  color: #00d4ff;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+tbody td {
+  padding: 0.75rem;
+  color: #eaeaea;
+}
+
+tbody tr:hover {
+  background: rgba(0, 212, 255, 0.05);
+  transition: background 0.3s ease;
+}
+
+/* =========================
+   Footer
+========================= */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #16213e;
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* =========================
+   Accent Elements
+========================= */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 0.5rem 0;
+  color: #eaeaea;
+}
+
+ul li strong {
+  color: #00d4ff;
+}

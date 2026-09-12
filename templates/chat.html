@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Chat</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <!-- ✅ Mermaid.js for flowchart rendering -->
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+
+    <!-- ✅ jsPDF for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <img src="/static/Assets/Logo.png" alt="RAGenius Logo" class="logo-img" />
+            </div>
+
+            <button class="new-chat">
+                + New Chat
+            </button>
+
+            <!-- History will be dynamically updated -->
+            <div class="history"></div>
+
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- HEADER -->
+            <header class="header">
+                <h2>AI Assistant</h2>
+                <!-- ✅ Download Chat Button -->
+                <button id="downloadChatBtn" class="btn secondary">⬇ Download Chat</button>
+            </header>
+
+            <!-- CHAT AREA -->
+            <section class="chat-area" id="chatArea">
+                <div class="message assistant">
+                    <div class="profile ai">AI</div>
+                    <div class="text">
+                        Hello 👋<br>
+                        Ask me anything.
+                    </div>
+                </div>
+            </section>
+
+            <!-- INPUT -->
+            <div class="input-section">
+                <div class="input-box">
+
+                    <!-- Textarea for message -->
+                    <textarea
+                        id="messageInput"
+                        placeholder="Send a message..."
+                        rows="1"
+                    ></textarea>
+
+                    <!-- Plus button for PDF upload -->
+                    <label for="pdfUpload" class="upload-btn">+</label>
+                    <input type="file" id="pdfUpload" accept="application/pdf" style="display:none;" />
+
+                    <!-- Send button -->
+                    <button id="sendBtn">Send</button>
+
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Script -->
+    <script src="/static/script.js"></script>
+
+    <!-- ✅ PDF Export Script -->
+    <script>
+      document.getElementById("downloadChatBtn").addEventListener("click", () => {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        // Get chat text
+        const chatContent = document.getElementById("chatArea").innerText;
+
+        // Add to PDF
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(12);
+        doc.text(chatContent, 10, 20);
+
+        // Save file
+        doc.save("chat.pdf");
+      });
+    </script>
+
+</body>
+</html>
